@@ -1,5 +1,6 @@
 Inheritance :
-Inheritance is a fundamental principle of OOP that enables a new class to inherit attributes and methods from an existing class. This promotes code reusability and establishes a natural hierarchy between classes.
+Inheritance is a fundamental principle of OOP that enables a new class to inherit attributes and methods from an existing class. 
+This promotes code reusability and establishes a natural hierarchy between classes.
 
 Person Class (Parent Class)
 The Person class serves as a base class with common attributes and methods that are relevant to all types of people in your application:
@@ -35,7 +36,8 @@ public class Person {
 }
 
  Student Class (Child Class)
-The Student class extends the Person class, inheriting its attributes and methods while also introducing its own specific attributes and behaviors:
+The Student class extends the Person class, inheriting its attributes and methods while also introducing its own specific attributes 
+and behaviors:
 
 package com.example.oops.principles.models;
 
@@ -83,28 +85,35 @@ public class Student extends Person {
 }
 
 How Inheritance is Demonstrated in the Code
-Extending the Person Class: The Student class uses the extends keyword to inherit from the Person class. This means that Student has access to all the public and protected attributes and methods of Person.
+Extending the Person Class: The Student class uses the extends keyword to inherit from the Person class. This means that Student 
+has access to all the public and protected attributes and methods of Person.
 
-Constructor Initialization: In the Student constructor, the super keyword is used to call the constructor of the Person class. This initializes the inherited attributes (name, id, address, phoneNumber) with the values passed when a Student object is created.
+Constructor Initialization: In the Student constructor, the super keyword is used to call the constructor of the Person class. 
+This initializes the inherited attributes (name, id, address, phoneNumber) with the values passed when a Student object is created.
 
 public Student(String name, int id, String address, String phoneNumber) {
     super(name, id, address, phoneNumber); 
 }
 
-Accessing Parent Class Methods: The Student class can use the getter methods from the Person class, such as getName() and getId(), without having to redefine them. This avoids code duplication and keeps the codebase clean.
+Accessing Parent Class Methods: The Student class can use the getter methods from the Person class, such as getName() and getId(), 
+without having to redefine them. This avoids code duplication and keeps the codebase clean.
 
-Overriding Methods: The Student class overrides the printDetails() method to provide a specific implementation that includes information relevant to students, while still utilizing the inherited properties:
+Overriding Methods: The Student class overrides the printDetails() method to provide a specific implementation that includes 
+information relevant to students, while still utilizing the inherited properties:
 @Override
 public void printDetails() {
     System.out.println("Student Name: " + getName() + ", ID: " + getId() + ", Subjects: " + subjects);
 }
 
 Benefits of Inheritance in This Code
-Code Reusability: The Student class reuses the code from the Person class, avoiding redundancy. Any changes made to the Person class (like adding new attributes or methods) will automatically be available to the Student class.
+Code Reusability: The Student class reuses the code from the Person class, avoiding redundancy. Any changes made to the Person 
+class (like adding new attributes or methods) will automatically be available to the Student class.
 
-Organizational Clarity: By defining a clear hierarchy (where Student is a type of Person), the code is easier to understand and maintain. It clarifies the relationship between the two classes.
+Organizational Clarity: By defining a clear hierarchy (where Student is a type of Person), the code is easier to understand and maintain. 
+It clarifies the relationship between the two classes.
 
-Extendability: New subclasses (like Teacher, Admin, etc.) can easily be created to extend the Person class, promoting a structured approach to class design.
+Extendability: New subclasses (like Teacher, Admin, etc.) can easily be created to extend the Person class, promoting a structured 
+approach to class design.
 
 Similarly for Teacher and admin
 
