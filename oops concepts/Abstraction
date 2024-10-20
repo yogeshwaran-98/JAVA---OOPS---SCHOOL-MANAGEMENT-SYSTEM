@@ -1,5 +1,7 @@
 ABSTRACTION:
-Abstraction in OOP involves defining a base class that specifies a set of methods (and possibly properties) without implementing the specifics of how those methods are performed. Concrete subclasses are then responsible for providing the actual implementation. This allows you to focus on the "what" rather than the "how."
+Abstraction in OOP involves defining a base class that specifies a set of methods (and possibly properties) without implementing 
+the specifics of how those methods are performed. Concrete subclasses are then responsible for providing the actual implementation. 
+This allows you to focus on the "what" rather than the "how."
 
 Exam Class (Abstract Class)
 The Exam class is defined as an abstract class, which means it cannot be instantiated directly. It serves as a blueprint for other classes:
@@ -22,9 +24,12 @@ public abstract class Exam {
 }
 
 Key Elements of Abstraction in the Exam Class
-Abstract Class: The Exam class is declared with the abstract keyword. This means it cannot be instantiated and is designed to be a base class for other exam types, such as WrittenExam and PracticalExam.
+Abstract Class: The Exam class is declared with the abstract keyword. This means it cannot be instantiated and is designed to 
+be a base class for other exam types, such as WrittenExam and PracticalExam.
 
-Abstract Methods: The conductExam() and calculateResults() methods are declared as abstract. This means that any class inheriting from Exam must provide concrete implementations for these methods. The details of how an exam is conducted and how results are calculated are intentionally left undefined at this level.
+Abstract Methods: The conductExam() and calculateResults() methods are declared as abstract. This means that any class inheriting 
+from Exam must provide concrete implementations for these methods. The details of how an exam is conducted and how results are 
+calculated are intentionally left undefined at this level.
 
 ubclasses Implementing Abstraction
 The WrittenExam and PracticalExam classes extend the Exam class and provide specific implementations of the abstract methods:
@@ -68,7 +73,9 @@ public class PracticalExam extends Exam {
 }
 
 How Abstraction is Demonstrated in This Code
-Hiding Implementation Details: The Exam class abstracts the concept of an exam by defining the properties and methods that all exam types will share without detailing how each specific type will conduct the exam or calculate results. This allows you to treat different types of exams uniformly while hiding their specific behaviors.
+Hiding Implementation Details: The Exam class abstracts the concept of an exam by defining the properties and methods that all 
+exam types will share without detailing how each specific type will conduct the exam or calculate results. This allows you to 
+treat different types of exams uniformly while hiding their specific behaviors.
 
 Defining a Common Interface: Both WrittenExam and PracticalExam must implement the conductExam() and calculateResults() methods. This ensures that regardless of the specific type of exam, any object of type Exam can be treated similarly, enhancing flexibility.
 
