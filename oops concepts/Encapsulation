@@ -1,0 +1,29 @@
+Encapsulation:
+Encapsulation is the practice of bundling data (attributes) and methods (functions) that operate on that data into a single unit or class. It restricts direct access to some of the object's components and is a means of preventing unintended interference and misuse of the methods and data.
+Encapsulation is the practice of creating a class that groups together its attributes (data) and methods (functions) that operate on that data. This allows you to treat the class as a single unit.
+
+Key Points:
+Attributes and Methods: You define the properties (attributes) and behaviors (methods) of the class. For example, in a Car class, you might have attributes like color and speed, and methods like accelerate() and brake().
+Access Control: You can control access to the attributes by using access modifiers (e.g., private, public). For instance, making attributes private means they cannot be accessed directly from outside the class.
+Interacting with the Class: To interact with the data, you typically provide public methods (like getters and setters) that allow users to access and modify the attributes safely.
+Data Hiding: This ensures that the internal state of an object is protected from unintended changes or misuse by exposing only the necessary methods to interact with the data.
+
+
+In This Code:
+
+The Person class has private fields like name, id, address, and phoneNumber. This means these attributes cannot be accessed directly from outside the class.
+
+private String name;
+private int id;
+
+Public getter and setter methods are provided to access and modify these fields:
+
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+This allows controlled access to the class's internal state.
