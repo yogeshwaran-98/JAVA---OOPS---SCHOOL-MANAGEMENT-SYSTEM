@@ -1,0 +1,110 @@
+Inheritance :
+Inheritance is a fundamental principle of OOP that enables a new class to inherit attributes and methods from an existing class. This promotes code reusability and establishes a natural hierarchy between classes.
+
+Person Class (Parent Class)
+The Person class serves as a base class with common attributes and methods that are relevant to all types of people in your application:
+
+package com.example.oops.principles.models;
+
+public class Person {
+    private String name;
+    private int id;
+    private String address;
+    private String phoneNumber;
+
+    public Person(String name, int id, String address, String phoneNumber) {
+        this.name = name;
+        this.id = id;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
+
+    // Getters and Setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+    public String getPhoneNumber() { return phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
+    public void printDetails() {
+        System.out.println("Name: " + name + ", ID: " + id + ", Address: " + address + ", Phone: " + phoneNumber);
+    }
+}
+
+ Student Class (Child Class)
+The Student class extends the Person class, inheriting its attributes and methods while also introducing its own specific attributes and behaviors:
+
+package com.example.oops.principles.models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Student extends Person {
+    private List<Subject> subjects = new ArrayList<>();
+    private List<GradeRecord> grades = new ArrayList<>();
+
+    public Student(String name, int id, String address, String phoneNumber) {
+        super(name, id, address, phoneNumber); // Call to the parent constructor
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public List<GradeRecord> getGrades() {
+        return grades;
+    }
+
+    public void enrollInSubject(Subject subject) {
+        subjects.add(subject);
+    }
+
+    public void addGrade(GradeRecord gradeRecord) {
+        grades.add(gradeRecord);
+    }
+
+    public List<GradeRecord> getGradesForSubject(Subject subject) {
+        List<GradeRecord> gradesForSubject = new ArrayList<>();
+        for (GradeRecord grade : grades) {
+            if (grade.getSubject().equals(subject)) {
+                gradesForSubject.add(grade);
+            }
+        }
+        return gradesForSubject;
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println("Student Name: " + getName() + ", ID: " + getId() + ", Subjects: " + subjects);
+    }
+}
+
+How Inheritance is Demonstrated in the Code
+Extending the Person Class: The Student class uses the extends keyword to inherit from the Person class. This means that Student has access to all the public and protected attributes and methods of Person.
+
+Constructor Initialization: In the Student constructor, the super keyword is used to call the constructor of the Person class. This initializes the inherited attributes (name, id, address, phoneNumber) with the values passed when a Student object is created.
+
+public Student(String name, int id, String address, String phoneNumber) {
+    super(name, id, address, phoneNumber); 
+}
+
+Accessing Parent Class Methods: The Student class can use the getter methods from the Person class, such as getName() and getId(), without having to redefine them. This avoids code duplication and keeps the codebase clean.
+
+Overriding Methods: The Student class overrides the printDetails() method to provide a specific implementation that includes information relevant to students, while still utilizing the inherited properties:
+@Override
+public void printDetails() {
+    System.out.println("Student Name: " + getName() + ", ID: " + getId() + ", Subjects: " + subjects);
+}
+
+Benefits of Inheritance in This Code
+Code Reusability: The Student class reuses the code from the Person class, avoiding redundancy. Any changes made to the Person class (like adding new attributes or methods) will automatically be available to the Student class.
+
+Organizational Clarity: By defining a clear hierarchy (where Student is a type of Person), the code is easier to understand and maintain. It clarifies the relationship between the two classes.
+
+Extendability: New subclasses (like Teacher, Admin, etc.) can easily be created to extend the Person class, promoting a structured approach to class design.
+
+Similarly for Teacher and admin
+
