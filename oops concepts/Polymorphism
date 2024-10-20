@@ -1,0 +1,22 @@
+POLYMORPHISM:
+Polymorphism allows methods to do different things based on the object it is acting upon. It can be achieved in two ways: method overloading (compile-time polymorphism) and method overriding (runtime polymorphism).
+Polymorphism generally refers to the ability to call the same method on different objects and have each respond in its own way. 
+
+PrintDetails method in Person class:
+public void printDetails() {
+        System.out.println("Name: " + name + ", ID: " + id + ", Address: " + address + ", Phone: " + phoneNumber);
+    }
+
+It get orerriden in the Student , Teacher classes:
+@Override
+    public void printDetails() {
+        System.out.println("Student Name: " + getName() + ", ID: " + getId() + ", Subjects: " + subjects);
+    }
+
+Now , in main application , we can create new student , teacher etc using the same person class and when we call the printdetails method , they call the corresponding overrident method of the student and teacher classes:
+Person teacher3 = new Teacher("Sandhya" , 102 , "chennai" , "98764");
+Person student3 = new Student("Akash" , 1012 , "chennai" , "98761");
+
+//polymorphism
+		teacher3.printDetails(); // This should call the overridden method in Teacher
+		student3.printDetails(); // This should call the overridden method in Student
