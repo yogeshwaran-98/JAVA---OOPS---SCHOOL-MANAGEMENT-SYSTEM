@@ -31,7 +31,7 @@ Abstract Methods: The conductExam() and calculateResults() methods are declared 
 from Exam must provide concrete implementations for these methods. The details of how an exam is conducted and how results are 
 calculated are intentionally left undefined at this level.
 
-ubclasses Implementing Abstraction
+Subclasses Implementing Abstraction
 The WrittenExam and PracticalExam classes extend the Exam class and provide specific implementations of the abstract methods:
 
 WrittenExam:
